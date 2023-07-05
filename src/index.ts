@@ -1,8 +1,10 @@
-const sayHello = (name = "world"): string => {
-    const message = `Hello, ${name}!`
-    console.log(message)
+import {NodePlopAPI} from "node-plop"
 
-    return message
+import context from "./context"
+
+const generator = (plop: NodePlopAPI): void => {
+    plop.setDefaultInclude({generators: true})
+    plop.setGenerator("context", context)
 }
 
-export {sayHello}
+export default generator
